@@ -1,0 +1,57 @@
+{
+  "name": "string",
+  "type": "Microsoft.ContainerService/managedClusters",
+  "apiVersion": "2018-03-31",
+  "location": "westeurope",
+  "tags": {
+      "environment": "production"
+  },
+  "properties": {
+    "kubernetesVersion": "1.8.7",
+    "dnsPrefix": "oase-prod",
+    "agentPoolProfiles": [
+      {
+        "name": "oase-prod-pool",
+        "count": "2",
+        "vmSize": "Standard_DS3_v2",
+        "osDiskSizeGB": "0",
+        "dnsPrefix": "oase-prod-pool"
+      }
+    ],
+    "linuxProfile": {
+      "adminUsername": "string",
+      "ssh": {
+        "publicKeys": [
+          {
+            "keyData": "string"
+          }
+        ]
+      }
+    },
+    "servicePrincipalProfile": {
+      "clientId": "string",
+      "secret": "string",
+      "keyVaultSecretRef": {
+        "vaultID": "string",
+        "secretName": "string",
+        "version": "string"
+      }
+    },
+    "addonProfiles": {},
+    "enableRBAC": true,
+    "networkProfile": {
+      "networkPlugin": "string",
+      "networkPolicy": "calico",
+      "podCidr": "string",
+      "serviceCidr": "string",
+      "dnsServiceIP": "string",
+      "dockerBridgeCidr": "string"
+    },
+    "aadProfile": {
+      "clientAppID": "string",
+      "serverAppID": "string",
+      "serverAppSecret": "string",
+      "tenantID": "string"
+    }
+  }
+}
